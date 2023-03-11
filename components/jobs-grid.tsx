@@ -64,15 +64,15 @@ function CompanyJobs({ jobs }: Props) {
   );
 }
 
-export default function JobsGrid({ jobs }: Props) {
-  const companies = jobs.reduce((allCompanies: any, job) => {
-    allCompanies[job.companyName] = [...(allCompanies[job.companyName] || []), job];
-    return allCompanies;
-  }, {});
+export default function JobsGrid() {
+  // const companies = jobs.reduce((allCompanies: any, job) => {
+  //   allCompanies[job.companyName] = [...(allCompanies[job.companyName] || []), job];
+  //   return allCompanies;
+  // }, {});
 
   return (
     <>
-      {Object.keys(companies).map((companyName: string) => (
+      {/* {Object.keys(companies).map((companyName: string) => (
         <div key={companyName} className={styles.companyRow}>
           <div className={styles.rowHeader}>
             <h2 className={styles.companyName}>{companyName}</h2>
@@ -97,7 +97,7 @@ export default function JobsGrid({ jobs }: Props) {
           </div>
           <CompanyJobs jobs={companies[companyName]} />
         </div>
-      ))}
+      ))} */}
     </>
   );
 }

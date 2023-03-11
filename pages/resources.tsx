@@ -25,11 +25,11 @@ import { getAllStages } from '@lib/cms-api';
 import { Stage } from '@lib/types';
 import { META_DESCRIPTION } from '@lib/constants';
 
-type Props = {
-  allStages: Stage[];
-};
+// type Props = {
+//   allStages: Stage[];
+// };
 
-export default function SchedulePage({ allStages }: Props) {
+export default function SchedulePage() {
   const meta = {
     title: 'Schedule - Virtual Event Starter Kit',
     description: META_DESCRIPTION
@@ -39,19 +39,19 @@ export default function SchedulePage({ allStages }: Props) {
     <Page meta={meta}>
       <Layout>
         <Header hero="Schedule" description={meta.description} />
-        <Schedule allStages={allStages} />
+        {/* <Schedule allStages={allStages} /> */}
       </Layout>
     </Page>
   );
 }
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
-  const allStages = await getAllStages();
+// export const getStaticProps: GetStaticProps<Props> = async () => {
+//   const allStages = await getAllStages();
 
-  return {
-    props: {
-      allStages
-    },
-    revalidate: 60
-  };
-};
+//   return {
+//     props: {
+//       allStages
+//     },
+//     revalidate: 60
+//   };
+// };

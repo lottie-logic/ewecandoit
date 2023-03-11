@@ -20,14 +20,12 @@ import { useRouter } from 'next/router';
 import { SkipNavContent } from '@reach/skip-nav';
 import { NAVIGATION } from '@lib/constants';
 import styles from './layout.module.css';
-import Logo from './icons/icon-logo';
 import MobileMenu from './mobile-menu';
 import Footer from './footer';
 import React from 'react';
-import DemoButton from './hms/demo-cta';
+// import DemoButton from './hms/demo-cta';
 import RoomCta from './hms/demo-cta/room-cta';
 import { hmsConfig } from './hms/config';
-import ViewSource from './view-source';
 
 type Props = {
   children: React.ReactNode;
@@ -56,9 +54,7 @@ export default function Layout({
               <MobileMenu key={router.asPath} />
               <Link href="/">
                 {/* eslint-disable-next-line */}
-                <a className={styles.logo}>
-                  <Logo />
-                </a>
+                <a className={styles.logo}>lott-e</a>
               </Link>
             </div>
             <div className={styles.tabs}>
@@ -78,14 +74,19 @@ export default function Layout({
             {(hmsConfig.hmsIntegration && isLive && !disableCta.includes(activeRoute)) ||
             activeRoute === '/' ? (
               <div className={cn(styles['header-right'])}>
-                {activeRoute === '/' ? <DemoButton /> : <RoomCta />}
+                {activeRoute === '/' ? (
+                  <button id="cta-btn" className={cn(styles['cta-btn'])}>
+                    Try Demo
+                  </button>
+                ) : (
+                  <RoomCta />
+                )}
               </div>
             ) : (
               <div />
             )}
           </header>
         )}
-        <ViewSource />
         <div className={styles.page}>
           <main className={styles.main} style={layoutStyles}>
             <SkipNavContent />

@@ -14,6 +14,18 @@
  * limitations under the License.
  */
 
+.cta-btn {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 15px;
+  color: white;
+  background: #323332;
+  border: 2px solid #8465cb;
+  border-radius: 8px;
+  padding: 10px 16px;
+  position: relative;
+}
+
 .background {
   background: #000;
   color: #fff;
@@ -115,4 +127,5 @@
 .logo {
   display: flex;
   width: 40px;
+  font-size: 25px;
 }

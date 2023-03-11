@@ -29,7 +29,7 @@ type Props = {
   jobs: Job[];
 };
 
-export default function Jobs({ jobs }: Props) {
+export default function Jobs() {
   const meta = {
     title: 'Career Fair - Virtual Event Starter Kit',
     description: META_DESCRIPTION
@@ -39,19 +39,19 @@ export default function Jobs({ jobs }: Props) {
     <Page meta={meta}>
       <Layout>
         <Header hero="Career Fair" description={meta.description} />
-        <JobsGrid jobs={jobs} />
+        <JobsGrid />
       </Layout>
     </Page>
   );
 }
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
-  const jobs = await getAllJobs();
+// export const getStaticProps: GetStaticProps<Props> = async () => {
+//   const jobs = await getAllJobs();
 
-  return {
-    props: {
-      jobs
-    },
-    revalidate: 60
-  };
-};
+//   return {
+//     props: {
+//       jobs
+//     },
+//     revalidate: 60
+//   };
+// };

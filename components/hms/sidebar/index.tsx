@@ -10,7 +10,8 @@ type Props = {
   allStages: Stage[];
 };
 
-const Sidebar = ({ allStages }: Props) => {
+// const Sidebar = ({ allStages }: Props) => {
+const Sidebar = () => {
   const localRole = useHMSStore(selectLocalPeerRole);
   return (
     <Tabs.Root asChild defaultValue="1">
@@ -18,7 +19,7 @@ const Sidebar = ({ allStages }: Props) => {
         <Tabs.List className="w-full px-4 tabs">
           <Tabs.Trigger asChild value="1">
             <button className="w-1/2 text-gray-300 h-[35px] text-[14px] border-solid border border-gray-700 rounded-l-md">
-              Chat
+              Code Editor
             </button>
           </Tabs.Trigger>
 
@@ -31,7 +32,7 @@ const Sidebar = ({ allStages }: Props) => {
           ) : (
             <Tabs.Trigger asChild value="2">
               <button className="w-1/2  text-gray-300 h-[35px] text-[14px] border-solid border border-gray-700 rounded-r-md">
-                Participants
+                Topics
               </button>
             </Tabs.Trigger>
           )}
@@ -43,7 +44,8 @@ const Sidebar = ({ allStages }: Props) => {
           <Participants />
         </Tabs.Content>
         <Tabs.Content asChild value="3">
-          <ScheduleSidebar allStages={allStages} />
+          <ScheduleSidebar />
+          {/* <ScheduleSidebar allStages={allStages} /> */}
         </Tabs.Content>
       </div>
     </Tabs.Root>

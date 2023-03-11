@@ -25,10 +25,11 @@ type Props = {
   allStages: Stage[];
 };
 
-export default function ScheduleSidebar({ allStages }: Props) {
+// export default function ScheduleSidebar({ allStages }: Props) {
+export default function ScheduleSidebar() {
   const router = useRouter();
   const [currentStageSlug, setCurrentStageSlug] = useState(router.query.slug);
-  const currentStage = allStages.find((s: Stage) => s.slug === currentStageSlug);
+  // const currentStage = allStages.find((s: Stage) => s.slug === currentStageSlug);
 
   useEffect(() => {
     setCurrentStageSlug(router.query.slug);
@@ -40,9 +41,9 @@ export default function ScheduleSidebar({ allStages }: Props) {
       <p>{SHORT_DATE}</p>
 
       <div className={styles.talks}>
-        {currentStage?.schedule.map(talk => (
+        {/* {currentStage?.schedule.map(talk => (
           <TalkCard key={talk.title} talk={talk} showTime />
-        ))}
+        ))} */}
       </div>
     </div>
   );
