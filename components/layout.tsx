@@ -1,20 +1,5 @@
-/**
- * Copyright 2020 Vercel Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import Link from 'next/link';
+import Image from 'next/image';
 import cn from 'classnames';
 import { useRouter } from 'next/router';
 import { SkipNavContent } from '@reach/skip-nav';
@@ -23,9 +8,7 @@ import styles from './layout.module.css';
 import MobileMenu from './mobile-menu';
 import Footer from './footer';
 import React from 'react';
-// import DemoButton from './hms/demo-cta';
-import RoomCta from './hms/demo-cta/room-cta';
-import { hmsConfig } from './hms/config';
+import NavBar from './navBar';
 
 type Props = {
   children: React.ReactNode;
@@ -33,6 +16,7 @@ type Props = {
   hideNav?: boolean;
   layoutStyles?: any;
   isLive?: boolean;
+  // data: Data[];
 };
 
 export default function Layout({
@@ -41,10 +25,13 @@ export default function Layout({
   hideNav,
   layoutStyles,
   isLive = false
-}: Props) {
+}: // data
+//
+Props) {
   const router = useRouter();
   const activeRoute = router.asPath;
   const disableCta = ['/schedule', '/speakers', '/expo', '/jobs'];
+  // console.log('asdjn', data);
   return (
     <>
       <div className={styles.background}>
@@ -53,10 +40,23 @@ export default function Layout({
             <div className={styles['header-logos']}>
               <MobileMenu key={router.asPath} />
               <Link href="/">
-                {/* eslint-disable-next-line */}
-                <a className={styles.logo}>lott-e</a>
+                <a className={styles.logo}>
+                  <>
+                    <Image
+                      className={styles.logoGif}
+                      height={50}
+                      width={50}
+                      alt="sheep"
+                      src="/logo.gif"
+                    />
+
+                    {/* eslint-disable-next-line */}
+                    <p className={styles.logoText}>ewecandoit</p>
+                  </>
+                </a>
               </Link>
             </div>
+
             <div className={styles.tabs}>
               {NAVIGATION.map(({ name, route }) => (
                 <a
@@ -71,28 +71,16 @@ export default function Layout({
               ))}
             </div>
 
-            {(hmsConfig.hmsIntegration && isLive && !disableCta.includes(activeRoute)) ||
-            activeRoute === '/' ? (
-              <div className={cn(styles['header-right'])}>
-                {activeRoute === '/' ? (
-                  <button id="cta-btn" className={cn(styles['cta-btn'])}>
-                    Try Demo
-                  </button>
-                ) : (
-                  <RoomCta />
-                )}
-              </div>
-            ) : (
-              <div />
-            )}
+            <div />
           </header>
         )}
+        <NavBar />
         <div className={styles.page}>
           <main className={styles.main} style={layoutStyles}>
             <SkipNavContent />
             <div className={cn(styles.full, className)}>{children}</div>
           </main>
-          {!activeRoute.startsWith('/stage') && <Footer />}
+          {/* {activeRoute.startsWith('/roadmap') ? <></> : <Footer />} */}
         </div>
       </div>
     </>

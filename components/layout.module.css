@@ -1,18 +1,7 @@
-/**
- * Copyright 2020 Vercel Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+.logoGif {
+  border-radius: 50%;
+  background-color: #8465cb;
+}
 
 .cta-btn {
   cursor: pointer;
@@ -57,9 +46,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  justify-items: self-end;
   background: var(--sidebar);
   border-bottom: 1px solid var(--accents-7);
-  height: var(--header-height);
+  margin-bottom: 5px;
+  height: 60px;
   z-index: 2;
 }
 
@@ -85,11 +76,13 @@
 .tabs {
   height: 100%;
   display: none;
+  /* flex: fit-content; */
 }
 
 @media screen and (min-width: 1032px) {
   .tabs {
-    display: initial;
+    display: block;
+    /* display: initial; */
   }
 
   .tabs > a:nth-child(2),
@@ -126,6 +119,13 @@
 
 .logo {
   display: flex;
-  width: 40px;
-  font-size: 25px;
+  width: full;
+
+  font-size: 18px;
+  align-items: center;
+  justify-items: flex-end;
+}
+
+.logoText {
+  margin-left: 10px;
 }

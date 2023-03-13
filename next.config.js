@@ -1,19 +1,3 @@
-/**
- * Copyright 2020 Vercel Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 module.exports = {
   images: {
     domains: [
@@ -22,7 +6,21 @@ module.exports = {
       'images.ctfassets.net',
       'images.prismic.io',
       'cdn.aglty.io',
-      'localhost' // For Strapi
+      'localhost', // For Strapi
+      'cdn.worldvectorlogo.com',
+      'placekitten.com',
+      'wikimedia.org',
+      'upload.wikimedia.org',
+      '2ality.com',
+      'upload.wikimedia.org',
+      'www.unosquare.com',
+      'pbs.twimg.com',
+      'e7.pngegg.com',
+      'seeklogo.com',
+      'lavca.org',
+      'dashboard.snapcraft.io',
+      'worldvectorlogo.com',
+      'avatars.githubusercontent.com'
     ],
     imageSizes: [24, 64, 300]
   }
