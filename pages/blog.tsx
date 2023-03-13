@@ -36,9 +36,9 @@ export default function StagePage({ stage, allStages }: Props) {
   };
   return (
     <Page meta={meta} fullViewport>
-      <Layout>
-        <StageContainer />
-      </Layout>
+      {/* <Layout data={null}> */}
+      {/* <StageContainer /> */}
+      {/* </Layout> */}
     </Page>
   );
 }

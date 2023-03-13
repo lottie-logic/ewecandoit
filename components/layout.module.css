@@ -50,7 +50,7 @@
   background: var(--sidebar);
   border-bottom: 1px solid var(--accents-7);
   margin-bottom: 5px;
-  height: 60px;
+  height: 7vh;
   z-index: 2;
 }
 

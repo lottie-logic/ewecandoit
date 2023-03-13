@@ -32,6 +32,7 @@
 }
 
 .navLane {
+  height: 7vh;
   display: flex;
   padding-left: 10px;
   padding-right: 10px;

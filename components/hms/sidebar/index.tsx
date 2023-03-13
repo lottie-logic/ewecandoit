@@ -1,51 +1,61 @@
-import { useHMSStore, selectLocalPeerRole } from '@100mslive/react-sdk';
 import React from 'react';
-import Chat from './Chat';
-import Participants from './Participants';
-import ScheduleSidebar from '@components/schedule-sidebar-individual';
-import { Stage } from '@lib/types';
 import * as Tabs from '@radix-ui/react-tabs';
 
+import styles from './sidebar.module.css';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+
 type Props = {
-  allStages: Stage[];
+  data: {
+    title: string;
+    slug: string;
+    image: string;
+    description: string;
+    questions: {
+      json: any;
+    };
+    books: {
+      json: any;
+    };
+    mainContent: {
+      json: any;
+    };
+
+    resources: {
+      json: any;
+    };
+  };
 };
 
-// const Sidebar = ({ allStages }: Props) => {
-const Sidebar = () => {
-  const localRole = useHMSStore(selectLocalPeerRole);
+const Sidebar = ({ data }: Props) => {
+  console.log('datataat', data);
   return (
     <Tabs.Root asChild defaultValue="1">
       <div className="sidebar-container">
         <Tabs.List className="w-full px-4 tabs">
           <Tabs.Trigger asChild value="1">
-            <button className="w-1/2 text-gray-300 h-[35px] text-[14px] border-solid border border-gray-700 rounded-l-md">
-              Code Editor
+            <button className="w-1/3 text-gray-300 h-[35px] text-[14px] border-solid border border-gray-700 rounded-l-md">
+              Questions
             </button>
           </Tabs.Trigger>
-
-          {localRole?.name === 'viewer' || localRole?.name === 'invitee' ? (
-            <Tabs.Trigger asChild value="3">
-              <button className="w-1/2  text-gray-300 h-[35px] text-[14px] border-solid border border-gray-700 rounded-r-md">
-                Schedule
-              </button>
-            </Tabs.Trigger>
-          ) : (
-            <Tabs.Trigger asChild value="2">
-              <button className="w-1/2  text-gray-300 h-[35px] text-[14px] border-solid border border-gray-700 rounded-r-md">
-                Topics
-              </button>
-            </Tabs.Trigger>
-          )}
+          <Tabs.Trigger asChild value="2">
+            <button className="w-1/3  text-gray-300 h-[35px] text-[14px] border-solid border border-gray-700 ">
+              Books
+            </button>
+          </Tabs.Trigger>
+          <Tabs.Trigger asChild value="3">
+            <button className="w-1/3  text-gray-300 h-[35px] text-[14px] border-solid border border-gray-700 rounded-r-md">
+              Resources
+            </button>
+          </Tabs.Trigger>
         </Tabs.List>
         <Tabs.Content asChild value="1">
-          <Chat />
+          <div className={styles.questions}>{documentToReactComponents(data?.questions?.json)}</div>
         </Tabs.Content>
         <Tabs.Content asChild value="2">
-          <Participants />
+          <div className={styles.questions}>{documentToReactComponents(data?.books?.json)}</div>
         </Tabs.Content>
         <Tabs.Content asChild value="3">
-          <ScheduleSidebar />
-          {/* <ScheduleSidebar allStages={allStages} /> */}
+          <div className={styles.questions}>{documentToReactComponents(data?.resources?.json)}</div>
         </Tabs.Content>
       </div>
     </Tabs.Root>

@@ -37,10 +37,8 @@ export default function Jobs() {
 
   return (
     <Page meta={meta}>
-      <Layout>
-        <Header hero="Contact" description={meta.description} />
-        <JobsGrid />
-      </Layout>
+      <Header hero="Contact" description={''} />
+      {/* <JobsGrid /> */}
     </Page>
   );
 }

@@ -1,19 +1,3 @@
-/**
- * Copyright 2020 Vercel Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import { GetStaticProps } from 'next';
 
 import Page from '@components/page';
@@ -22,36 +6,71 @@ import Layout from '@components/layout';
 import Header from '@components/header';
 
 import { getAllJobs } from '@lib/cms-api';
-import { Job } from '@lib/types';
+import { Data } from '@lib/types';
 import { META_DESCRIPTION } from '@lib/constants';
+import Image from 'next/image';
 
 type Props = {
-  jobs: Job[];
+  data: Data[];
 };
 
-export default function Jobs() {
+export default function About({ data }: Props) {
   const meta = {
-    title: 'Career Fair - Virtual Event Starter Kit',
+    title: 'About Lottie',
     description: META_DESCRIPTION
   };
 
   return (
-    <Page meta={meta}>
-      <Layout>
-        <Header hero="Career Fair" description={meta.description} />
-        <JobsGrid />
-      </Layout>
+    <Page meta={meta} fullViewport>
+      <Header hero="About me" description={meta.description} />
+
+      <div className=" flex  p-8 w-full">
+        <Image
+          className="rounded-full border-4 border-solid border-cyan-200"
+          width={240}
+          height={240}
+          src="https://avatars.githubusercontent.com/u/89790287?v=4"
+          alt="me"
+        />
+        {/* <p className="w-full ml-12"> Hey! I'm Lottie</p> */}
+      </div>
+      {/* socials heres */}
+      {/* <JobsGrid data={data} /> */}
+      {/* <JobsGrid data={gitHubRepos} /> */}
     </Page>
   );
 }
 
-// export const getStaticProps: GetStaticProps<Props> = async () => {
-//   const jobs = await getAllJobs();
+// export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
+  const query = `query {
+    roadmapCollection {
+      items {
+        slug
+        title
+        image
+      }
+    }
+  }`;
 
-//   return {
-//     props: {
-//       jobs
-//     },
-//     revalidate: 60
-//   };
-// };
+  const response = await fetch(
+    `https://graphql.contentful.com/content/v1/spaces/${process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID}/environments/master`,
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN}`
+      },
+      body: JSON.stringify({ query })
+    }
+  ).then(response => response.json());
+
+  const data = response.data.roadmapCollection.items;
+
+  return {
+    props: {
+      data: data
+    }
+    // revalidate: 60
+  };
+};

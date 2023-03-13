@@ -15,16 +15,21 @@ export default function NavBar() {
     { title: 'Typescript', slug: 'typescript' },
     { title: 'APIs', slug: 'api' },
     { title: 'GraphQL', slug: 'graphql' },
-    { title: 'Dev Ops', slug: 'dev-ops' },
-    { title: 'Cloud', slug: 'cloud' },
     { title: 'BASH', slug: 'bash' },
+    { title: 'Node.JS', slug: 'node-js' },
     { title: 'SQL', slug: 'sql' },
     { title: 'noSQL', slug: 'nosql' },
+    { title: 'Dev Ops', slug: 'dev-ops' },
+    { title: 'Cloud Serverless', slug: 'cloud' },
+    { title: 'AWS', slug: 'aws' },
     { title: 'Architecture', slug: 'software-architect' },
-    { title: 'UI/UX', slug: 'ui-ux' },
+    { title: 'UI / UX', slug: 'ui-ux' },
     { title: 'Cyber Security', slug: 'cybersecurity' },
     { title: 'Computer Science', slug: 'computer-science' },
-    { title: 'Programming Principles', slug: 'programming-principles' }
+    { title: 'Git', slug: 'git' },
+    { title: 'Programming Principles', slug: 'programming-principles' },
+    { title: 'HTML5', slug: 'html5' },
+    { title: 'CSS / SCSS', slug: 'css-scss' }
   ];
   // let isCurrent = router
 
@@ -34,7 +39,6 @@ export default function NavBar() {
 
   const completedClass = router.asPath.substring(1) == 'react' ? styles.isCurrent : styles.navLink;
 
-  // className={` pathName === ${i.slug} ? ${styles.isCurrent} : ${styles.navLink}  `}
   return (
     <>
       <div className={styles.navBarBox}>

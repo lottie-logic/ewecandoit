@@ -1,19 +1,3 @@
-/**
- * Copyright 2020 Vercel Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 .schedule {
   width: 100%;
   background: var(--sidebar);
@@ -62,4 +46,24 @@
     max-height: calc(var(--100vh) - var(--header-height));
     --talk-card-width: unset;
   }
+}
+
+.card {
+  color: inherit;
+  display: block;
+  border-radius: var(--space-2x);
+  min-width: var(--talk-card-width, 270px);
+  max-width: var(--talk-card-width, 270px);
+  padding: 1px;
+  background-clip: content-box, border-box;
+  background-image: linear-gradient(#111111, #111111), linear-gradient(to right, #333333, #333333);
+  margin-bottom: 10px;
+}
+.card:hover {
+  background-image: linear-gradient(#111111, #111111), linear-gradient(to right, #aaa, #aaa);
+}
+
+.questions {
+  padding: 5px;
+  overflow-y: scroll;
 }
