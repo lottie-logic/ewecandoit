@@ -22,6 +22,10 @@ I hold the idea that anyone can learn to code, even ewe!
 - [x] making dynamic routes to our slugs we defined in the data
 - [x] statically generated pages per topic
 - [x] pull in lessons per topic 
+- [ ] Attach blogs to frontend
+- [ ] Tick off each 'watched' / 'read' link
+- [ ] Fill progress bar for topic with every completion
+- [ ] Add socials and github repos to the about page
 - [ ] sidebar of other lessons in topic
 - [ ] edtiable pages
 - [ ] auth
@@ -33,6 +37,10 @@ I hold the idea that anyone can learn to code, even ewe!
 - [ ] Newsletter SignUp
 - [ ] Masonary Grid (Tumblr Esque)
 - [ ] make sure we aren't loading in from Contentful too often than necessary
+- [ ] Rebuild in Next 13 with layout
+- [ ] Find sheep animations and backgrounds 
+- [ ] Login for users, save progress
+- [ ] Quiz questions become flip cards / actual quiz to go through
 
 
 ---
