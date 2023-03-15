@@ -6,7 +6,6 @@ import { SkipNavContent } from '@reach/skip-nav';
 import { NAVIGATION } from '@lib/constants';
 import styles from './layout.module.css';
 import MobileMenu from './mobile-menu';
-import Footer from './footer';
 import React from 'react';
 import NavBar from './navBar';
 
@@ -16,22 +15,12 @@ type Props = {
   hideNav?: boolean;
   layoutStyles?: any;
   isLive?: boolean;
-  // data: Data[];
 };
 
-export default function Layout({
-  children,
-  className,
-  hideNav,
-  layoutStyles,
-  isLive = false
-}: // data
-//
-Props) {
+export default function Layout({ children, className, hideNav, layoutStyles }: Props) {
   const router = useRouter();
   const activeRoute = router.asPath;
-  const disableCta = ['/schedule', '/speakers', '/expo', '/jobs'];
-  // console.log('asdjn', data);
+
   return (
     <>
       <div className={styles.background}>
@@ -80,7 +69,6 @@ Props) {
             <SkipNavContent />
             <div className={cn(styles.full, className)}>{children}</div>
           </main>
-          {/* {activeRoute.startsWith('/roadmap') ? <></> : <Footer />} */}
         </div>
       </div>
     </>

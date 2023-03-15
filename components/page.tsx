@@ -3,7 +3,6 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { SITE_NAME, SITE_URL, TWITTER_USER_NAME } from '@lib/constants';
 import Layout from './layout';
-import { Data } from '@lib/types';
 
 type Meta = {
   title: string | null;
@@ -16,7 +15,6 @@ type Props = {
   meta: Meta;
   children: React.ReactNode;
   fullViewport?: boolean;
-  // data: Data[];
 };
 
 export default function Page({ meta, children, fullViewport = false }: Props) {

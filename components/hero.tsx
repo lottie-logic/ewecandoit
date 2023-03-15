@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import styleUtils from './utils.module.css';
 import styles from './hero.module.css';
-import { BRAND_NAME, DATE, SITE_DESCRIPTION } from '@lib/constants';
+import { DATE, SITE_DESCRIPTION } from '@lib/constants';
 
 export default function Hero() {
   return (

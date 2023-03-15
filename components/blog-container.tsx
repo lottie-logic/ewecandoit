@@ -1,7 +1,5 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import cn from 'classnames';
 import styles from './stage-container.module.css';
-import styleUtils from './utils.module.css';
 
 type Props = {
   data: {
