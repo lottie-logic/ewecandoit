@@ -19,6 +19,20 @@ export type Speaker = {
 };
 
 
+export type Blog = {
+  heading: string;
+  slug: string;
+  preview: {
+    json: any
+  }
+  main: {
+    json: any
+  };
+
+
+};
+
+
 export type Data = {
   title: string;
   slug: string;

@@ -6,6 +6,23 @@
   overflow: hidden;
 }
 
+.blogMain {
+  margin-top: 30px;
+}
+
+.blogContainer {
+  width: 100%;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  padding-right: 340px;
+  padding-left: 340px;
+  /* padding-bottom: 100px; */
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+}
+
 .streamContainer {
   width: 100%;
   padding: 60px;

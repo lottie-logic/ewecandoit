@@ -1,10 +1,6 @@
 import styles from './navBar.module.css';
 import Link from 'next/link';
-import { Data } from '@lib/types';
 import { useRouter } from 'next/router';
-type Props = {
-  data: Data[];
-};
 
 export default function NavBar() {
   const router = useRouter();
@@ -31,13 +27,10 @@ export default function NavBar() {
     { title: 'HTML5', slug: 'html5' },
     { title: 'CSS / SCSS', slug: 'css-scss' }
   ];
-  // let isCurrent = router
 
-  let pathName = router.asPath.substring(1);
+  const pathName = router.asPath.substring(1);
 
   console.log('pathName === ${i.slug} ', pathName === 'react');
-
-  const completedClass = router.asPath.substring(1) == 'react' ? styles.isCurrent : styles.navLink;
 
   return (
     <>

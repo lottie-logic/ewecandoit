@@ -22,11 +22,12 @@ I hold the idea that anyone can learn to code, even ewe!
 - [x] making dynamic routes to our slugs we defined in the data
 - [x] statically generated pages per topic
 - [x] pull in lessons per topic 
-- [ ] Attach blogs to frontend
+- [x] Attach blogs to frontend
+- [ ] Bring in recommended blogs 'but don't overfetch!'
 - [ ] Tick off each 'watched' / 'read' link
 - [ ] Fill progress bar for topic with every completion
 - [ ] Add socials and github repos to the about page
-- [ ] sidebar of other lessons in topic
+- [x] sidebar of other lessons in topic
 - [ ] edtiable pages
 - [ ] auth
 - [ ] user profiles, can contribute

@@ -1,5 +1,5 @@
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
-import HorizontalMenuIcon from '@components/icons/icon-menu-hor';
+// import HorizontalMenuIcon from '@components/icons/icon-menu-hor';
 import { selectLocalPeerRole, useHMSActions, useHMSStore } from '@100mslive/react-sdk';
 import { InviteStageIcon, RemoveUserIcon } from '@100mslive/react-icons';
 
@@ -31,9 +31,7 @@ const Dropdown: React.FC<{ id: string; role: string }> = ({ id, role }) => {
         <div>
           <DropdownMenu.Root>
             <DropdownMenu.Trigger asChild>
-              <button type="button">
-                <HorizontalMenuIcon />
-              </button>
+              <button type="button">{/* <HorizontalMenuIcon /> */}</button>
             </DropdownMenu.Trigger>
             <DropdownMenu.Content className="min-w-[220px] bg-gray-700 rounded-lg">
               <DropdownMenu.Item asChild>
