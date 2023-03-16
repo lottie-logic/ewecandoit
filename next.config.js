@@ -20,7 +20,9 @@ module.exports = {
       'lavca.org',
       'dashboard.snapcraft.io',
       'worldvectorlogo.com',
-      'avatars.githubusercontent.com'
+      'avatars.githubusercontent.com',
+      'cdn.iconscout.com',
+      'static-00.iconduck.com'
     ],
     imageSizes: [24, 64, 300]
   }
