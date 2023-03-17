@@ -33,7 +33,7 @@ I hold the idea that anyone can learn to code, even ewe!
 - [ ] user profiles, can contribute
 - [ ] Nav (Lessons, Blog, Topics, Resources)
 - [ ] Build out blog area 
-- [ ] Resources 
+- [x] Resources 
 - [ ] Interactive Roadmaps
 - [ ] Newsletter SignUp
 - [ ] Masonary Grid (Tumblr Esque)

@@ -50,6 +50,9 @@ export async function getStaticProps({ params }: any) {
         books {
           json
         }
+        courses {
+          json
+        }
         resources {
           json
         }
