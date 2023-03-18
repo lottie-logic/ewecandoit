@@ -42,13 +42,17 @@ export type Data = {
     json: any
   };
   books: {
-
+    json: any
+  }
+  courses: {
+    json: any
+  }
+  resources: {
+    json: any
   }
   mainContent: {
     json: any
   };
-
-
 };
 
 export type Stage = {

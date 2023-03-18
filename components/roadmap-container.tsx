@@ -1,30 +1,14 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import cn from 'classnames';
-import styles from './stage-container.module.css';
+import styles from './roadmap-container.module.css';
 import styleUtils from './utils.module.css';
 import Sidebar from './hms/sidebar';
+import { Data } from '@lib/types';
 
 type Props = {
-  data: {
-    title: string;
-    slug: string;
-    image: string;
-    description: string;
-    mainContent: {
-      json: any;
-    };
-    questions: {
-      json: any;
-    };
-    books: {
-      json: any;
-    };
-    resources: {
-      json: any;
-    };
-  };
+  data: Data;
 };
-export default function StageContainer({ data }: Props) {
+export default function RoadmapContainer({ data }: Props) {
   return (
     <div className={styles.container}>
       <div className={styles.streamContainer}>
@@ -33,7 +17,6 @@ export default function StageContainer({ data }: Props) {
           {documentToReactComponents(data?.mainContent?.json)}
         </div>
       </div>
-
       <Sidebar data={data} />
     </div>
   );

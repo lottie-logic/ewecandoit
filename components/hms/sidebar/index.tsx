@@ -1,32 +1,11 @@
 import React from 'react';
 import * as Tabs from '@radix-ui/react-tabs';
-
 import styles from './sidebar.module.css';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { Data } from '@lib/types';
 
 type Props = {
-  data: {
-    title: string;
-    slug: string;
-    image: string;
-    description: string;
-    questions: {
-      json: any;
-    };
-    books: {
-      json: any;
-    };
-    mainContent: {
-      json: any;
-    };
-
-    courses: {
-      json: any;
-    };
-    resources: {
-      json: any;
-    };
-  };
+  data: Data;
 };
 
 const Sidebar = ({ data }: Props) => {

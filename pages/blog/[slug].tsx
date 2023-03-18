@@ -5,7 +5,7 @@ import { META_DESCRIPTION } from '@lib/constants';
 
 //runs during build time and generates the paths
 export async function getStaticPaths() {
-  const query = `query {
+  const QUERY = `query {
     blogPostCollection {
     items {
       slug
@@ -14,7 +14,7 @@ export async function getStaticPaths() {
   }
 }`;
 
-  const response = await fetch(
+  const RESPONSE = await fetch(
     `https://graphql.contentful.com/content/v1/spaces/${process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID}/environments/master`,
     {
       method: 'POST',
@@ -22,11 +22,11 @@ export async function getStaticPaths() {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN}`
       },
-      body: JSON.stringify({ query })
+      body: JSON.stringify({ QUERY })
     }
-  ).then(response => response.json());
+  ).then(RESPONSE => RESPONSE.json());
 
-  const slugs = response.data.blogPostCollection.items.map(({ slug }: any) => {
+  const slugs = RESPONSE.data.blogPostCollection.items.map(({ slug }: any) => {
     return { params: { slug } };
   });
 
@@ -37,8 +37,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }: any) {
-  const variables = { slug: params.slug };
-  const query = `query getBlogs($slug: String!) {
+  const VARIABLES = { slug: params.slug };
+  const QUERY = `query getBlogs($slug: String!) {
     blogPostCollection(where: {slug : $slug}) {
        items {
         heading
@@ -50,7 +50,7 @@ export async function getStaticProps({ params }: any) {
         }
     }`;
 
-  const response = await fetch(
+  const RESPONSE = await fetch(
     `https://graphql.contentful.com/content/v1/spaces/${process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID}/environments/master`,
     {
       method: 'POST',
@@ -58,24 +58,24 @@ export async function getStaticProps({ params }: any) {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN}`
       },
-      body: JSON.stringify({ query, variables })
+      body: JSON.stringify({ QUERY, VARIABLES })
     }
-  ).then(response => response.json());
+  ).then(RESPONSE => RESPONSE.json());
   return {
     props: {
-      blog: response.data.blogPostCollection.items[0]
+      blog: RESPONSE.data.blogPostCollection.items[0]
     }
   };
 }
 
 export default function Blog({ blog }: any) {
-  const meta = {
+  const META = {
     title: 'Blog',
     description: META_DESCRIPTION
   };
 
   return (
-    <Page meta={meta} fullViewport>
+    <Page meta={META} fullViewport>
       <BlogContainer data={blog} />
       {/* <BlogSidebar data={ blog} /> */}
     </Page>

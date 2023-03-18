@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import Image from 'next/image';
-
 import styles from './project-grid.module.css';
 
 type Props = {

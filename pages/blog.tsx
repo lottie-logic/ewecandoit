@@ -1,9 +1,7 @@
 import Page from '@components/page';
-
 import { Blog } from '@lib/types';
 import { META_DESCRIPTION } from '@lib/constants';
 import BlogsGrid from '@components/blogs-grid';
-
 import Header from '@components/header';
 
 type Props = {
@@ -11,12 +9,12 @@ type Props = {
 };
 
 export default function BlogPage({ data }: Props) {
-  const meta = {
-    title: 'Demo - Virtual Event Starter Kit',
+  const META = {
+    title: 'Blog',
     description: META_DESCRIPTION
   };
   return (
-    <Page meta={meta} fullViewport>
+    <Page meta={META} fullViewport>
       <Header hero="Blog" description={''} />
       <BlogsGrid data={data} />
     </Page>
@@ -30,7 +28,6 @@ export async function getStaticProps() {
         heading
         slug
         preview
-
       }
         }
     }`;

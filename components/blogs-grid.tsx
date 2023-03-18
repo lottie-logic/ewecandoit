@@ -22,8 +22,6 @@ export default function BlogsGrid({ data }: Props) {
                 <div className={styles.cardBody}>
                   <div>
                     <h2 className={styles.title}>{topic.heading}</h2>
-                    {/* <p className={styles.company}>{topic.heading}</p> */}
-
                     <p className={styles.description}>{topic.preview}</p>
                   </div>
                   <p className={styles.link}>

@@ -43,7 +43,6 @@ I hold the idea that anyone can learn to code, even ewe!
 - [ ] Login for users, save progress
 - [ ] Quiz questions become flip cards / actual quiz to go through
 
-
 ---
 
 ### Target Audience 

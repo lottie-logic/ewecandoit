@@ -1,19 +1,17 @@
 import Page from '@components/page';
-import StageContainer from '@components/stage-container';
+import RoadmapContainer from '@components/roadmap-container';
 import { META_DESCRIPTION } from '@lib/constants';
 
-//runs during build time and generates the paths
 export async function getStaticPaths() {
-  const query = `query {
+  const QUERY = `query {
     roadmapCollection {
     items {
       slug
-
     }
   }
 }`;
 
-  const response = await fetch(
+  const RESPONSE = await fetch(
     `https://graphql.contentful.com/content/v1/spaces/${process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID}/environments/master`,
     {
       method: 'POST',
@@ -21,11 +19,10 @@ export async function getStaticPaths() {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN}`
       },
-      body: JSON.stringify({ query })
+      body: JSON.stringify({ query: QUERY })
     }
-  ).then(response => response.json());
-
-  const slugs = response.data.roadmapCollection.items.map(({ slug }: any) => {
+  ).then(RESPONSE => RESPONSE.json());
+  const slugs = RESPONSE.data.roadmapCollection.items.map(({ slug }: any) => {
     return { params: { slug } };
   });
 
@@ -36,8 +33,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }: any) {
-  const variables = { slug: params.slug };
-  const query = `query getRoadmaps($slug: String!) {
+  const VARIABLES = { slug: params.slug };
+  const QUERY = `query getRoadmaps($slug: String!) {
     roadmapCollection(where: {slug : $slug}) {
        items {
         title
@@ -60,7 +57,7 @@ export async function getStaticProps({ params }: any) {
         }
     }`;
 
-  const response = await fetch(
+  const RESPONSE = await fetch(
     `https://graphql.contentful.com/content/v1/spaces/${process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID}/environments/master`,
     {
       method: 'POST',
@@ -68,25 +65,24 @@ export async function getStaticProps({ params }: any) {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN}`
       },
-      body: JSON.stringify({ query, variables })
+      body: JSON.stringify({ query: QUERY, variables: VARIABLES })
     }
-  ).then(response => response.json());
+  ).then(RESPONSE => RESPONSE.json());
   return {
     props: {
-      roadmap: response.data.roadmapCollection.items[0]
+      roadmap: RESPONSE.data.roadmapCollection.items[0]
     }
   };
 }
 
 export default function Roadmap({ roadmap }: any) {
-  const meta = {
+  const META = {
     title: 'Roadmap',
     description: META_DESCRIPTION
   };
-
   return (
-    <Page meta={meta} fullViewport>
-      <StageContainer data={roadmap} />
+    <Page meta={META} fullViewport>
+      <RoadmapContainer data={roadmap} />
     </Page>
   );
 }

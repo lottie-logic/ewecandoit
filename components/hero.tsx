@@ -5,37 +5,39 @@ import { DATE, SITE_DESCRIPTION } from '@lib/constants';
 
 export default function Hero() {
   return (
-    <div className={styles.wrapper}>
-      <h2
-        className={cn(
-          styleUtils.appear,
-          styleUtils['appear-third'],
-          styleUtils['show-on-mobile'],
-          styles.description
-        )}
-      >
-        {SITE_DESCRIPTION}
-      </h2>
-      <h1 className={cn(styleUtils.appear, styleUtils['appear-third'], styles.hero)}>
-        Just remember
-        <br className={styleUtils['show-on-desktop']} /> You can do it!
-      </h1>
-      <h2
-        className={cn(
-          styleUtils.appear,
-          styleUtils['appear-third'],
-          styleUtils['show-on-tablet'],
-          styles.description
-        )}
-      >
-        {SITE_DESCRIPTION}
-      </h2>
-      <div className={cn(styleUtils.appear, styleUtils['appear-fourth'], styles.info)}>
-        <p>{DATE}</p>
-        <div className={styles['description-separator']} />
-        <p>
-          <strong>start learning</strong>
-        </p>
+    <div className={styles.container}>
+      <div className={styles.wrapper}>
+        <h2
+          className={cn(
+            styleUtils.appear,
+            styleUtils['appear-third'],
+            styleUtils['show-on-mobile'],
+            styles.description
+          )}
+        >
+          {SITE_DESCRIPTION}
+        </h2>
+        <h1 className={cn(styleUtils.appear, styleUtils['appear-third'], styles.hero)}>
+          Just remember
+          <br className={styleUtils['show-on-desktop']} /> You can do it!
+        </h1>
+        <h2
+          className={cn(
+            styleUtils.appear,
+            styleUtils['appear-third'],
+            styleUtils['show-on-tablet'],
+            styles.description
+          )}
+        >
+          {SITE_DESCRIPTION}
+        </h2>
+        <div className={cn(styleUtils.appear, styleUtils['appear-fourth'], styles.info)}>
+          <p>{DATE}</p>
+          <div className={styles['description-separator']} />
+          <p>
+            <strong>start learning</strong>
+          </p>
+        </div>
       </div>
     </div>
   );

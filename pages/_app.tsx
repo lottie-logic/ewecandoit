@@ -150,7 +150,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <OverlayProvider>
           <HMSRoomProvider>
             <Component {...pageProps} />
-
             <ResizeHandler />
             <NProgress />
           </HMSRoomProvider>
