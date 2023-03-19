@@ -5,17 +5,7 @@ type Props = {
 
 export default function IconGithub({ color = '#111111', size = 22 }: Props) {
   return (
-    <a
-      href="https://github.com/lott-e"
-      style={{
-        display: 'flex',
-        width: 'full',
-
-        fontSize: '18px',
-        alignItems: 'center',
-        justifyItems: 'flex-end'
-      }}
-    >
+    <a href="https://github.com/lott-e" style={{}}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 17 16"

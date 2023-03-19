@@ -52,7 +52,7 @@
   color: inherit;
   display: block;
   border-radius: var(--space-2x);
-  min-width: var(--talk-card-width, 270px);
+
   max-width: var(--talk-card-width, 270px);
   padding: 1px;
   background-clip: content-box, border-box;
@@ -66,4 +66,188 @@
 .questions {
   padding: 5px;
   overflow-y: scroll;
+  overflow-x: hidden;
+  align-items: center;
+  justify-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.grid {
+  margin: 50px auto;
+  padding: 0 24px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 24px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.topicGrid {
+  margin: 50px auto;
+  padding: 0 24px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-gap: 24px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    padding: 0 var(--space-8x);
+  }
+}
+
+.grid::-webkit-scrollbar {
+  display: none;
+}
+
+.topicCard {
+  border-radius: var(--space-2x);
+  background: #111111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-clip: content-box, border-box;
+  background-image: linear-gradient(#111111, #111111), linear-gradient(to right, #333333, #333333);
+  padding: 1px;
+  cursor: pointer;
+}
+
+.topicCard:hover,
+.topicCard:focus {
+  outline: none;
+  background-image: linear-gradient(#111111, #111111),
+    linear-gradient(to right, var(--brand), var(--brand));
+}
+
+.card {
+  border-radius: var(--space-2x);
+  background: #111111;
+  display: flex;
+  flex-direction: column;
+  background-clip: content-box, border-box;
+  background-image: linear-gradient(#111111, #111111), linear-gradient(to right, #333333, #333333);
+  padding: 1px;
+  cursor: pointer;
+}
+
+.card:hover,
+.card:focus {
+  outline: none;
+  background-image: linear-gradient(#111111, #111111),
+    linear-gradient(to right, var(--brand), var(--brand));
+}
+
+.cardBody {
+  padding: var(--space-4x);
+  color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.topicImageWrapper {
+  width: 80%;
+  height: 80%;
+  padding-top: 10px;
+}
+
+.image {
+  object-fit: cover;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.topicImage {
+  object-fit: contain;
+  border-radius: 6px;
+  margin-top: 15px;
+  /* background-color: #f5f5f5e8; */
+}
+
+@media (max-width: 471px) {
+  .imageWrapper > div {
+    width: 100% !important;
+  }
+}
+
+.topicName {
+  font-weight: bold;
+  color: #f1f1f1;
+  font-size: 13px;
+  margin: 0;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 85px;
+}
+
+.name {
+  font-weight: bold;
+  color: #f1f1f1;
+  font-size: 20px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.company {
+  color: #f1f1f1;
+}
+
+.title {
+  margin: 0;
+}
+
+.avatar {
+  border-radius: 100%;
+  width: auto;
+  min-height: auto;
+  border: antiquewhite solid 1px;
+}
+
+.socials {
+  margin-top: 20px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.aboutMe {
+  margin: 50px auto;
+  padding: 0 24px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* display: grid; */
+  /* grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); */
+  /* grid-gap: 24px; */
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

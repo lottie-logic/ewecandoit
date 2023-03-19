@@ -12,7 +12,7 @@ export default function TopicGrid({ projects }: any) {
   return (
     <div className={styles.topicGrid}>
       {projects.map((p: Props) => (
-        <Link key={p.name} href={`/${p.slug}`}>
+        <Link key={p.slug} href={`/${p.slug}`}>
           <a role="button" tabIndex={0} className={styles.topicCard}>
             <div className={styles.topicImageWrapper}>
               <Image

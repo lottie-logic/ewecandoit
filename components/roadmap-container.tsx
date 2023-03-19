@@ -14,7 +14,10 @@ export default function RoadmapContainer({ data }: Props) {
       <div className={styles.streamContainer}>
         <div className={cn(styles.stream, styleUtils.appear, styleUtils['appear-first'])}>
           <h1> {data.title}</h1>
-          {documentToReactComponents(data?.mainContent?.json)}
+          <div className={styles.roadmapContent}>
+            {documentToReactComponents(data?.mainContent?.json)}
+          </div>
+          <div className={styles.bottomPadding}> </div>
         </div>
       </div>
       <Sidebar data={data} />

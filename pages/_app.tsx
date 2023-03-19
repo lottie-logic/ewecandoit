@@ -92,6 +92,12 @@ export default function App({ Component, pageProps }: AppProps) {
         'https://cdn.iconscout.com/icon/premium/png-512-thumb/ui-ux-design-4589453-3796629.png?f=avif&w=512'
     },
     {
+      title: 'CMS',
+      slug: 'cms',
+      image:
+        'https://cdn.iconscout.com/icon/premium/png-512-thumb/ui-ux-design-4589453-3796629.png?f=avif&w=512'
+    },
+    {
       title: 'SQL',
       slug: 'sql',
       image:

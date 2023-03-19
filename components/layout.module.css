@@ -49,13 +49,13 @@
   justify-items: self-end;
   background: var(--sidebar);
   border-bottom: 1px solid var(--accents-7);
-  margin-bottom: 5px;
+
   height: 7vh;
   z-index: 2;
 }
 
 .header-logos {
-  max-width: 200px;
+  /* max-width: 200px; */
   display: flex;
   align-items: center;
   margin: var(--space-2x) var(--space-4x);
@@ -63,7 +63,7 @@
 
 .header-right {
   margin: var(--space-2x) var(--space-4x);
-  margin-right: 5rem;
+  /* margin-right: 5rem; */
   display: none;
 }
 
@@ -128,4 +128,13 @@
 
 .logoText {
   margin-left: 10px;
+}
+
+.description {
+  width: fit-content !important;
+  font-size: 12px;
+  width: full;
+  margin-left: 5px;
+  color: #8a8f98;
+  /* overflow: ;/ */
 }
