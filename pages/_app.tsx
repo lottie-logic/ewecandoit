@@ -35,6 +35,11 @@ export default function App({ Component, pageProps }: AppProps) {
       image: 'https://cdn.iconscout.com/icon/free/png-512/typescript-1174965.png?f=avif&w=512'
     },
     {
+      title: 'Testing',
+      slug: 'testing',
+      image: 'https://cdn.iconscout.com/icon/free/png-512/typescript-1174965.png?f=avif&w=512'
+    },
+    {
       title: 'APIs',
       slug: 'api',
       image:
