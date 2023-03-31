@@ -40,6 +40,11 @@ export default function App({ Component, pageProps }: AppProps) {
       image: 'https://cdn.iconscout.com/icon/free/png-512/typescript-1174965.png?f=avif&w=512'
     },
     {
+      title: 'Git',
+      slug: 'git',
+      image: 'https://cdn.iconscout.com/icon/free/png-512/git-17-1175218.png?f=avif&w=512'
+    },
+    {
       title: 'APIs',
       slug: 'api',
       image:
@@ -61,11 +66,7 @@ export default function App({ Component, pageProps }: AppProps) {
       slug: 'node-js',
       image: 'https://cdn.iconscout.com/icon/free/png-512/nodejs-2-226035.png?f=avif&w=512'
     },
-    {
-      title: 'Git',
-      slug: 'git',
-      image: 'https://cdn.iconscout.com/icon/free/png-512/git-17-1175218.png?f=avif&w=512'
-    },
+
     {
       title: 'Programming Principles',
       slug: 'programming-principles',
